@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Certificate } from '../types';
-import { generateCertificatePDF } from '../utils/pdfExport';
+import { Certificate } from './types';
+import { generateCertificatePDF } from './utils/pdfExport';
 import { X, Download, ShieldCheck, AlertTriangle, XCircle, Copy, Check, ExternalLink, Ban } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
-import { api } from '../api';
+import { useAuth } from './context/AuthContext';
+import { api } from './api';
 
 interface CertificateModalProps {
   certificate: Certificate | null;
