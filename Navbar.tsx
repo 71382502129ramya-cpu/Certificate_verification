@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from './AuthContext';
 import { ShieldCheck, Award, Users, Calendar, Search, LogOut, UserCheck, ChevronDown, CheckCircle2, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
