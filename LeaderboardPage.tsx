@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { LeaderboardUser } from '../types';
-import { api } from '../api';
+import { LeaderboardUser } from './types';
+import { api } from './api';
 import { Trophy, Medal, Award, Search, Sparkles, Star, TrendingUp, ShieldCheck } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from './context/AuthContext';
 
 export const LeaderboardPage: React.FC = () => {
   const { user } = useAuth();
