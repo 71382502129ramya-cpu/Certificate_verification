@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { AcademicEvent } from '../types';
-import { api } from '../api';
-import { useAuth } from '../context/AuthContext';
+import { AcademicEvent } from './types';
+import { api } from './api';
+import { useAuth } from './context/AuthContext';
 import { X, Calendar, PlusCircle } from 'lucide-react';
 
 interface CreateEventModalProps {
