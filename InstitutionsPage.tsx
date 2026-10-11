@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Institution } from '../types';
-import { api } from '../api';
-import { useAuth } from '../context/AuthContext';
+import { Institution } from './types';
+import { api } from './api';
+import { useAuth } from './context/AuthContext';
 import { CreateInstitutionModal } from '../components/CreateInstitutionModal';
 import { Building2, Plus, Search, ExternalLink, ShieldCheck, Mail } from 'lucide-react';
 
