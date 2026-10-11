@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Certificate } from './types';
-import { generateCertificatePDF } from './utils/pdfExport';
+import { generateCertificatePDF } from './pdfExport';
 import { X, Download, ShieldCheck, AlertTriangle, XCircle, Copy, Check, ExternalLink, Ban } from 'lucide-react';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './AuthContext';
 import { api } from './api';
 
 interface CertificateModalProps {
