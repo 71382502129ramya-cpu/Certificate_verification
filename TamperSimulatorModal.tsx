@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Certificate } from '../types';
-import { api } from '../api';
+import { Certificate } from './types';
+import { api } from './api';
 import { X, ShieldAlert, CheckCircle2, AlertOctagon, RefreshCw } from 'lucide-react';
 
 interface TamperSimulatorModalProps {
