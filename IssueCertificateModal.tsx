@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Certificate, AcademicEvent, User } from '../types';
-import { api } from '../api';
-import { useAuth } from '../context/AuthContext';
+import { Certificate, AcademicEvent, User } from './types';
+import { api } from './api';
+import { useAuth } from './context/AuthContext';
 import { X, Award, ShieldCheck, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
