@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { Navbar } from './components/Navbar';
-import { AuthModal } from './components/AuthModal';
-import { PublicVerifyPage } from './pages/PublicVerifyPage';
-import { StudentDashboard } from './pages/StudentDashboard';
-import { IssuerDashboard } from './pages/IssuerDashboard';
-import { AdminDashboard } from './pages/AdminDashboard';
-import { EventsPage } from './pages/EventsPage';
-import { InstitutionsPage } from './pages/InstitutionsPage';
-import { LeaderboardPage } from './pages/LeaderboardPage';
+import { AuthProvider, useAuth } from './AuthContext';
+import { Navbar } from './Navbar';
+import { AuthModal } from './AuthModal';
+import { PublicVerifyPage } from './PublicVerifyPage';
+import { StudentDashboard } from './StudentDashboard';
+import { IssuerDashboard } from './IssuerDashboard';
+import { AdminDashboard } from './AdminDashboard';
+import { EventsPage } from './EventsPage';
+import { InstitutionsPage } from './InstitutionsPage';
+import { LeaderboardPage } from './LeaderboardPage';
 import { ShieldCheck, Database, Lock, Award, Heart } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
