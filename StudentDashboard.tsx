@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
 import { Certificate, UploadedCertificate, AcademicEvent } from './types';
 import { api } from './api';
-import { CertificateModal } from './components/CertificateModal';
-import { UploadCertificateModal } from './components/UploadCertificateModal';
-import { generateCertificatePDF } from './utils/pdfExport';
+import { CertificateModal } from './CertificateModal';
+import { UploadCertificateModal } from './UploadCertificateModal';
+import { generateCertificatePDF } from './pdfExport';
 import {
   Award,
   UploadCloud,
