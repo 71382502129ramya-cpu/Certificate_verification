@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UploadedCertificate } from './types';
 import { api } from './api';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './AuthContext';
 import { X, UploadCloud, FileText, CheckCircle } from 'lucide-react';
 
 interface UploadCertificateModalProps {
