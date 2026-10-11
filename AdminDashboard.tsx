@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { Certificate, Institution, VerificationLog } from '../types';
-import { api } from '../api';
-import { CertificateModal } from '../components/CertificateModal';
-import { CreateInstitutionModal } from '../components/CreateInstitutionModal';
-import { generateCertificatePDF } from '../utils/pdfExport';
+import { useAuth } from './context/AuthContext';
+import { Certificate, Institution, VerificationLog } from './types';
+import { api } from './api';
+import { CertificateModal } from './CertificateModal';
+import { CreateInstitutionModal } from './CreateInstitutionModal';
+import { generateCertificatePDF } from './pdfExport';
 import {
   ShieldAlert,
   Building2,
