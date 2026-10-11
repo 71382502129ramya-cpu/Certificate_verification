@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../api';
-import { Certificate, VerificationResponse, VerificationLog } from '../types';
-import { generateCertificatePDF } from '../utils/pdfExport';
-import { TamperSimulatorModal } from '../components/TamperSimulatorModal';
+import { api } from './api';
+import { Certificate, VerificationResponse, VerificationLog } from './types';
+import { generateCertificatePDF } from './utils/pdfExport';
+import { TamperSimulatorModal } from './components/TamperSimulatorModal';
 import {
   ShieldCheck,
   Search,
