@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { AcademicEvent } from './types';
 import { api } from './api';
-import { useAuth } from './context/AuthContext';
-import { CreateEventModal } from './components/CreateEventModal';
-import { IssueCertificateModal } from './components/IssueCertificateModal';
+import { useAuth } from './AuthContext';
+import { CreateEventModal } from './CreateEventModal';
+import { IssueCertificateModal } from './IssueCertificateModal';
 import { Calendar, Plus, Trophy, Building2, Search, CheckCircle, Award } from 'lucide-react';
 
 interface EventsPageProps {
