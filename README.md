@@ -1,105 +1,78 @@
 # Digital Certificate Verification System
 
-A web-based Digital Certificate Verification System that simplifies certificate issuance, management, and authentication using unique Certificate IDs, QR codes, and SHA-256 hashing.
+An enterprise-grade, cryptographically verifiable digital certificate issuance, verification, and academic credential management platform built with React, Node.js/Express, TypeScript, Tailwind CSS, and PostgreSQL.
 
-## 🚀 Project Overview
+---
 
-The Digital Certificate Verification System helps educational institutions issue digital certificates and allows anyone to verify their authenticity online. It aims to reduce certificate forgery, simplify verification, and maintain organized certificate records.
+## 🌟 Features
 
-## ✨ Features
+### 1. Public Verification & Cryptographic Auditing
+- **Instant Lookup**: Verify any academic certificate using either its unique Certificate ID (e.g. `CERT-2026-NITS-8841`) or its 64-character SHA-256 cryptographic hash.
+- **Cryptographic Tamper Detection**: Computes a deterministic SHA-256 hash across immutable attributes (ID, recipient email, issuer name, event title, issue date) to detect unauthorized edits.
+- **Tampering Simulator**: Test and demonstrate integrity checks by modifying simulated certificate attributes in real-time to watch verification fail when hashes mismatch.
+- **Status Lifecycle**: Supports `Active`, `Revoked`, `Tampered`, and `Invalid` states with audit reasons and timestamps.
+- **Scannable QR Codes**: Every certificate embeds a scannable verification payload linking directly to the authentic record.
 
-- **Institution Management** – Register and manage educational institutions.
-- **Institution Name Autocomplete** – Suggest existing institutions while entering an institution name.
-- **Certificate Issuance** – Generate digital certificates for students and participants.
-- **QR Code Authentication** – Verify certificates by scanning their QR codes.
-- **SHA-256 Hashing** – Generate a hash to support certificate integrity verification.
-- **Certificate Status** – Support certificate validity checks, including invalid or revoked statuses.
-- **Event and Participant Management** – Organize events, courses, and participant details.
-- **Persistent Data Storage** – Store application data in a PostgreSQL database when configured.
-- **Responsive Interface** – Access the application through a web browser.
+### 2. Multi-Role Access Control
+- **Student Portal**:
+  - View personal earned credentials and download print-ready PDF certificates.
+  - Submit external credentials (AWS, Coursera, NPTEL) with file attachments for faculty review.
+  - Track activity points and achievement tiers (**Diamond**, **Platinum**, **Gold**, **Silver**).
+  - Browse and register for academic hackathons, workshops, and symposiums.
+- **Faculty / Issuer Console**:
+  - Issue cryptographically signed digital certificates with custom grades and metadata.
+  - Host inter-institutional academic hackathons and courses.
+  - Review, approve, or reject student-submitted external certificates with reward point allocation (+25 to +100 points).
+  - Revoke certificates with recorded audit justification and timestamps.
+- **Super Administrator Console**:
+  - System-wide governance across all institutions, issuers, and students.
+  - Accredit and onboard new universities, autonomous colleges, and certifying authorities.
+  - Real-time audit logs of every certificate query and verification attempt.
+  - High-level system statistics (issuance rates, active vs. revoked ratios, accredited bodies).
 
-## 🛠️ Tech Stack
+### 3. Academic Events & Competitions
+- Catalog of collegiate hackathons, symposiums, workshops, and professional courses.
+- Activity point rewards tied to event participation and winning placements.
+- Integrated issuance modal to issue bulk or individual certificates to event participants.
 
-- **Frontend:** React, TypeScript, Vite
-- **Backend:** Node.js, Express.js
-- **Database:** PostgreSQL / Supabase
-- **Security:** SHA-256 hashing and QR-code-based verification
-- **Deployment:** Render
+### 4. Accredited Institutions Directory
+- Directory of accredited higher education institutions and certification bodies.
+- Institution codes, verification status badges, contact emails, and external web portals.
 
-## 🔄 How It Works
+### 5. Competitive Student Leaderboard
+- Real-time ranking of students across departments and institutions.
+- Top-3 podium visualization with medal badges.
+- Filtering by department and quick search.
 
-1. An institution registers with the system.
-2. The institution and issuer manage student and event details.
-3. Certificates are generated with a unique Certificate ID and QR code.
-4. Certificate information is stored in the application database.
-5. A verifier scans the QR code or checks the Certificate ID.
-6. The system retrieves the certificate record and displays its verification status.
+### 6. Official PDF Certificate Generation
+- High-fidelity PDF export with formal typography, official gold seal, institution branding, authorized signature, and embedded verification QR code.
 
-## 🌐 Live Demo
+---
 
-- **Frontend:** https://digital-certificate-system-1pyu.onrender.com/
-- **Backend:** https://digital-certificate-jw1h.onrender.com/
+## 🏗️ Architecture & Tech Stack
 
-## ⚙️ Installation and Setup
+| Layer | Technology |
+|---|---|
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, Lucide React |
+| **Backend** | Express.js, TypeScript, tsx, esbuild |
+| **Database** | PostgreSQL (Embedded PGlite engine with relational schemas) |
+| **Cryptography** | Node.js / Web Crypto SHA-256 hashing |
+| **Document Export** | jsPDF, html2canvas, qrcode |
 
-### Prerequisites
+---
 
-- Node.js and npm
-- A PostgreSQL database (optional for local testing; required for shared database persistence)
+## 📁 Project Structure
 
-### 1. Clone the repository
 
-```bash
-git clone https://github.com/71382502129ramya-cpu/Digital_Certificate_System.git
-cd Digital_Certificate_System
-```
+## Deployment notes
 
-### 2. Install dependencies
+### Vercel frontend
+Set the following Environment Variable in the Vercel project: `VITE_API_URL=https://digital-certificate-verification-system-1.onrender.com` and redeploy.
 
-```bash
-npm install
-```
+The frontend also has a safe fallback to the current Render backend URL, so it can still connect when the variable is not present. For a different backend URL, set `VITE_API_URL` explicitly.
 
-### 3. Configure environment variables
+### Render backend
+Keep the PostgreSQL connection variables configured in Render. The server exposes a health endpoint at `/api/health`.
 
-Create a `.env` file in the project root and configure the required database and API settings.
-
-```env
-DATABASE_URL=your_postgresql_connection_string
-VITE_API_BASE_URL=http://localhost:3000
-```
-
-For a deployed frontend, set `VITE_API_BASE_URL` to the deployed backend URL.
-
-### 4. Run the application
-
-```bash
-npm run dev
-```
-
-Use the development URL shown in the terminal to open the application.
-
-### 5. Build for production
-
-```bash
-npm run build
-npm start
-```
-
-## 💾 Data Persistence
-
-The application supports PostgreSQL-based shared storage through Supabase. Configure the database connection on the backend and redeploy the application to enable data persistence across browsers and devices.
-
-Without a configured shared database, local browser storage may be used as a fallback and will not synchronize data across different devices.
-
-## 🔐 Security Note
-
-This project is an academic prototype. Before using it with real student information, implement proper authentication, role-based access control, server-side validation, and protected database operations. Do not expose database credentials or sensitive information in public repositories.
-
-## 🎯 Project Objective
-
-To provide a simple, reliable, and accessible digital platform for issuing and verifying certificates while helping institutions and verifiers reduce the risk of fraudulent certificates.
-
-## 👩‍💻 Developed For
-
-Academic project — Digital Certificate Verification System with Automated Certificate Issuance and QR-Based Authentication.
+### Theme update
+The UI keeps the existing VeriCert blue/indigo/slate visual language while adding responsive mobile navigation, refined verification trust cards, improved spacing, and deployment-safe API configuration.
