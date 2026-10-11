@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './AuthContext';
 import { Certificate, UploadedCertificate, AcademicEvent } from './types';
 import { api } from './api';
-import { CertificateModal } from './components/CertificateModal';
-import { IssueCertificateModal } from './components/IssueCertificateModal';
-import { ReviewUploadModal } from './components/ReviewUploadModal';
-import { CreateEventModal } from './components/CreateEventModal';
-import { generateCertificatePDF } from './utils/pdfExport';
+import { CertificateModal } from './CertificateModal';
+import { IssueCertificateModal } from './IssueCertificateModal';
+import { ReviewUploadModal } from './ReviewUploadModal';
+import { CreateEventModal } from './CreateEventModal';
+import { generateCertificatePDF } from './pdfExport';
 import {
   Award,
   Plus,
