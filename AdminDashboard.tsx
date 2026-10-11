@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './AuthContext';
 import { Certificate, Institution, VerificationLog } from './types';
 import { api } from './api';
 import { CertificateModal } from './CertificateModal';
