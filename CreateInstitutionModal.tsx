@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Institution } from '../types';
-import { api } from '../api';
+import { Institution } from './types';
+import { api } from './api';
 import { X, Building2, Plus } from 'lucide-react';
 
 interface CreateInstitutionModalProps {
