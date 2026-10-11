@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { UploadedCertificate } from '../types';
-import { api } from '../api';
-import { useAuth } from '../context/AuthContext';
+import { UploadedCertificate } from './types';
+import { api } from './api';
+import { useAuth } from './context/AuthContext';
 import { X, CheckCircle, XCircle, FileText, ExternalLink, Award } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
